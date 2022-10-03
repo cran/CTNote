@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Gabriel Odom, Laura Brandt, Sean Luo, and Ray Balise" />
+
+<meta name="date" content="2022-10-01" />
+
+<title>CTNote Library: Abstinence Outcomes</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+<style type="text/css">detaiks.chunk-details > summary.chunk-summary {
+text-align: right;
+}
+details.chunk-details[open] > summary.chunk-summary::after {
+content: "Hide";
+}
+details.chunk-details[open] > summary.chunk-summary > span.chunk-summary-text {
+display: none;
+}
+</style>
+<script>$(document).ready(function(){
+    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+    if ($('[data-toggle="popover"]').popover === 'function') {
+        $('[data-toggle="popover"]').popover();
+    }
+});
+</script>
+<style type="text/css">
+.lightable-minimal {
+border-collapse: separate;
+border-spacing: 16px 1px;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-minimal td {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal th {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal thead tr:last-child th {
+border-bottom: 2px solid #00000050;
+empty-cells: hide;
+}
+.lightable-minimal tbody tr:first-child td {
+padding-top: 0.5em;
+}
+.lightable-minimal.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-minimal.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic {
+border-top: 0.16em solid #111111;
+border-bottom: 0.16em solid #111111;
+width: 100%;
+margin-bottom: 10px;
+margin: 10px 5px;
+}
+.lightable-classic tfoot tr td {
+border: 0;
+}
+.lightable-classic tfoot tr:first-child td {
+border-top: 0.14em solid #111111;
+}
+.lightable-classic caption {
+color: #222222;
+}
+.lightable-classic td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic thead tr:last-child th {
+border-bottom: 0.10em solid #111111;
+}
+.lightable-classic.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic-2 {
+border-top: 3px double #111111;
+border-bottom: 3px double #111111;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-classic-2 tfoot tr td {
+border: 0;
+}
+.lightable-classic-2 tfoot tr:first-child td {
+border-top: 3px double #111111;
+}
+.lightable-classic-2 caption {
+color: #222222;
+}
+.lightable-classic-2 td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic-2 th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic-2 tbody tr:last-child td {
+border-bottom: 3px double #111111;
+}
+.lightable-classic-2 thead tr:last-child th {
+border-bottom: 1px solid #111111;
+}
+.lightable-classic-2.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic-2.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #EEE;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+.lightable-material tfoot tr td {
+border: 0;
+}
+.lightable-material tfoot tr:first-child td {
+border-top: 1px solid #EEE;
+}
+.lightable-material th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.lightable-material td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+border-top: 1px solid #eeeeee;
+}
+.lightable-material.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #ddd;
+}
+.lightable-material-dark {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #FFFFFF12;
+border-collapse: collapse;
+margin-bottom: 10px;
+background-color: #363640;
+}
+.lightable-material-dark tfoot tr td {
+border: 0;
+}
+.lightable-material-dark tfoot tr:first-child td {
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF60;
+}
+.lightable-material-dark td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF;
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark.lightable-hover tbody tr:hover {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody tr:nth-child(even) {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material-dark.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #FFFFFF12;
+}
+.lightable-paper {
+width: 100%;
+margin-bottom: 10px;
+color: #444;
+}
+.lightable-paper tfoot tr td {
+border: 0;
+}
+.lightable-paper tfoot tr:first-child td {
+border-top: 1px solid #00000020;
+}
+.lightable-paper thead tr:last-child th {
+color: #666;
+vertical-align: bottom;
+border-bottom: 1px solid #00000020;
+line-height: 1.15em;
+padding: 10px 5px;
+}
+.lightable-paper td {
+vertical-align: middle;
+border-bottom: 1px solid #00000010;
+line-height: 1.15em;
+padding: 7px 5px;
+}
+.lightable-paper.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-paper.lightable-striped tbody tr:nth-child(even) {
+background-color: #00000008;
+}
+.lightable-paper.lightable-striped tbody td {
+border: 0;
+}
+</style>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">CTNote Library: Abstinence Outcomes</h1>
+<h4 class="author">Gabriel Odom, Laura Brandt, Sean Luo, and Ray
+Balise</h4>
+<h4 class="date">2022-10-01</h4>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#abstinence-from-substance-use-endpoints" id="toc-abstinence-from-substance-use-endpoints">Abstinence from
+Substance Use Endpoints</a>
+<ul>
+<li><a href="#fiellin_counseling_2006" id="toc-fiellin_counseling_2006"><span class="citation">Fiellin et al.
+(2006)</span></a></li>
+<li><a href="#kosten_buprenorphine_1993" id="toc-kosten_buprenorphine_1993"><span class="citation">Kosten et al.
+(1993)</span></a></li>
+<li><a href="#krupitsky_injectable_2011-a-and-b" id="toc-krupitsky_injectable_2011-a-and-b"><span class="citation">Krupitsky et al. (2011)</span> (A) and (B)</a></li>
+<li><a href="#ling_buprenorphine_1998" id="toc-ling_buprenorphine_1998"><span class="citation">Ling et al.
+(1998)</span></a></li>
+<li><a href="#lofwall_weekly_2018" id="toc-lofwall_weekly_2018"><span class="citation">Lofwall et al. (2018)</span></a></li>
+<li><a href="#mokri_medical_2016" id="toc-mokri_medical_2016"><span class="citation">Mokri et al. (2016)</span></a></li>
+<li><a href="#schottenfeld_methadone_2005" id="toc-schottenfeld_methadone_2005"><span class="citation">Richard S.
+Schottenfeld et al. (2005)</span></a></li>
+<li><a href="#schottenfeld_maintenance_2008-a-and-b" id="toc-schottenfeld_maintenance_2008-a-and-b"><span class="citation">Richard S. Schottenfeld, Chawarski, and Mazlan
+(2008)</span> (A) and (B)</a></li>
+<li><a href="#shufman_efficacy_1994" id="toc-shufman_efficacy_1994"><span class="citation">Shufman et al.
+(1994)</span></a></li>
+<li><a href="#weiss_adjunctive_2011-ctn-0030" id="toc-weiss_adjunctive_2011-ctn-0030"><span class="citation">Weiss et
+al. (2011, CTN–0030)</span></a></li>
+</ul></li>
+<li><a href="#computing-environment" id="toc-computing-environment">Computing Environment</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>This document contains the algorithms necessary to code all the
+outcomes which measure “abstinence from substance use” or “relapse to
+substance use”. We only include outcomes which result in a single value
+per subject. These outcomes are:</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:1000px; ">
+<table class="table table-striped lightable-minimal" style="font-size: 11px; margin-left: auto; margin-right: auto; font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Group
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Endpoint
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Class
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Reference
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Definition
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Missing is
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Abstinence weeks
+</td>
+<td style="text-align:left;width: 3cm; ">
+integer
+</td>
+<td style="text-align:left;width: 3cm; ">
+Fiellin et al., 2006
+</td>
+<td style="text-align:left;width: 5cm; ">
+Weeks of confirmed opioid abstinence
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Continuous abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+logical
+</td>
+<td style="text-align:left;width: 3cm; ">
+Kosten et al., 1993
+</td>
+<td style="text-align:left;width: 5cm; ">
+attaining at least 3 weeks of consecutive negative UOS
+</td>
+<td style="text-align:left;">
+Missing/not imputed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Complete Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+logical
+</td>
+<td style="text-align:left;width: 3cm; ">
+Krupitsky et al., 2011
+</td>
+<td style="text-align:left;width: 5cm; ">
+Confirmed opioid abstinence during weeks 5‐24 based on UOS
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Abstinence weeks
+</td>
+<td style="text-align:left;width: 3cm; ">
+integer
+</td>
+<td style="text-align:left;width: 3cm; ">
+Krupitsky et al., 2011
+</td>
+<td style="text-align:left;width: 5cm; ">
+Weeks of confirmed opioid abstinence
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Continuous abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+logical
+</td>
+<td style="text-align:left;width: 3cm; ">
+Ling et al., 1998
+</td>
+<td style="text-align:left;width: 5cm; ">
+% of participants who maintained 13 consecutive negative UOS (1 month)
+</td>
+<td style="text-align:left;">
+Missing/not imputed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Complete Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+logical
+</td>
+<td style="text-align:left;width: 3cm; ">
+Lofwall et al., 2018
+</td>
+<td style="text-align:left;width: 5cm; ">
+No evidence of opioid use based on UOS (NOTE: minimal evidence of opioid
+use from UOS, not none)
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Length of Initial Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+survival
+</td>
+<td style="text-align:left;width: 3cm; ">
+Mokri, Chawarski, Taherinakhost, &amp; Schottenfeld, 2016
+</td>
+<td style="text-align:left;width: 5cm; ">
+Days to 1st positive UOS
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Longest period of abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+integer
+</td>
+<td style="text-align:left;width: 3cm; ">
+Schottenfeld et al., 2005
+</td>
+<td style="text-align:left;width: 5cm; ">
+Max. number of consecutive weeks of negative UOS
+</td>
+<td style="text-align:left;">
+Missing
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Longest period of abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+integer
+</td>
+<td style="text-align:left;width: 3cm; ">
+Schottenfeld et al., 2008
+</td>
+<td style="text-align:left;width: 5cm; ">
+Longest period of negative UOS
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Length of Initial Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+survival
+</td>
+<td style="text-align:left;width: 3cm; ">
+Schottenfeld, Chawarski, &amp; Mazlan, 2008
+</td>
+<td style="text-align:left;width: 5cm; ">
+Days to 1st positive UOS after randomization
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Length of Initial Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+survival
+</td>
+<td style="text-align:left;width: 3cm; ">
+Shufman et al., 1994
+</td>
+<td style="text-align:left;width: 5cm; ">
+Weeks between 1st day of NTX administration and 1st positive UOS
+</td>
+<td style="text-align:left;">
+Missing
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; ">
+Abstinence
+</td>
+<td style="text-align:left;width: 3cm; ">
+Abstinence period
+</td>
+<td style="text-align:left;width: 3cm; ">
+logical
+</td>
+<td style="text-align:left;width: 3cm; ">
+Weiss et al., 2011 CTN-0030
+</td>
+<td style="text-align:left;width: 5cm; ">
+Negative UOS during the last week AND for at least 2 of the previous 3
+weeks of the third month of BUP/NX treatment
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We will use the table of participant opioid use patterns from the
+<code>ctn0094DataExtra</code> package to calculate these endpoints (we
+have a copy of the endpoints in the dataset
+<code>outcomesCTN0094</code>). Importantly, if you wish to apply these
+algorithms to calculate endpoints for your data, the participants’
+substance use patterns must be stored in the “substance use pattern
+word” format shown here. We also show a subset of the data to visualize
+a variety of different real substance use patterns.</p>
+<p>We first define the following five-value legend:</p>
+<ul>
+<li><strong>+</strong>: positive for the substance(s) in a specified
+window of time (a day, week, month, etc.) by urine screen (or
+participant self report, if such data are of interest)</li>
+<li><strong>–</strong>: negative for the substance(s)</li>
+<li><strong>o</strong>: subject failed to provide a urine sample</li>
+<li><b>*</b>: inconclusive results or mixed results (e.g. subject
+provided more than one urine sample in the time interval and they did
+not agree)</li>
+<li><b>_</b>: no specimens required (weekends, holidays,
+pre-randomization period, alternating visit days/weeks)</li>
+</ul>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">###  Full Data  </span><span class="al">###</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>udsOutcomes_df <span class="ot">&lt;-</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    CTNote<span class="sc">::</span>outcomesCTN0094 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a copy</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> udsOutcomes_df</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">###  Examples  </span><span class="al">###</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>examplePeople_int <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">163</span>, <span class="dv">210</span>, <span class="dv">242</span>, <span class="dv">4</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">1103</span>, <span class="dv">233</span>, <span class="dv">2089</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 2
+##      who usePatternUDS                      
+##    &lt;dbl&gt; &lt;chr&gt;                              
+##  1     1 ooooooooooooooo                    
+##  2     4 -------------------o-o-o           
+##  3    13 ------------o-oooooooooo           
+##  4    17 --++*++++++-++++++-+++-            
+##  5   163 -o---o---o--o+----------           
+##  6   210 -++++++++-+++-----------           
+##  7   233 *+++++++++++o++++++++++o           
+##  8   242 -----------------------            
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o
+## 10  2089 ++++---+--------------o-</code></pre>
+<p>For example, participant 1 has a use pattern
+<code>ooooooooooooooo</code> (all missing UDS), which means that they
+dropped out of the study. In contrast, participant 233 has a use pattern
+<code>*+++++++++++o++++++++++o</code> (nearly all positive UDS): they
+did not drop out of the study, but the treatment was completely
+ineffective for them. Participant 2089 started the study in a rough
+patch, but greatly improved in treatment over time
+(<code>++++---+--------------o-</code>).</p>
+<hr />
+<p></br></p>
+</div>
+<div id="abstinence-from-substance-use-endpoints" class="section level1">
+<h1>Abstinence from Substance Use Endpoints</h1>
+<div id="fiellin_counseling_2006" class="section level2">
+<h2><span class="citation">Fiellin et al. (2006)</span></h2>
+<p><strong>Definition</strong>: Weeks of confirmed opioid abstinence;
+missing is positive</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># mixed results != abstinence</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># We did not code this definition with an &quot;end&quot;, so participants with longer</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   stays in treatment could have higher scores</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">fiellin2006_abs =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;-&quot;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, fiellin2006_abs) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, fiellin2006_abs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       fiellin2006_abs
+##    &lt;dbl&gt; &lt;chr&gt;                                         &lt;int&gt;
+##  1     1 ooooooooooooooo                                   0
+##  2     4 -------------------o-o-o                         21
+##  3    13 ------------o-oooooooooo                         13
+##  4    17 --++*++++++-++++++-+++-                           5
+##  5   163 -o---o---o--o+----------                         19
+##  6   210 -++++++++-+++-----------                         13
+##  7   233 *+++++++++++o++++++++++o                          0
+##  8   242 -----------------------                          23
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o              20
+## 10  2089 ++++---+--------------o-                         18</code></pre>
+</div>
+<div id="kosten_buprenorphine_1993" class="section level2">
+<h2><span class="citation">Kosten et al. (1993)</span></h2>
+<p><strong>Definition</strong>: attaining at least 3 weeks of
+consecutive negative UOS</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">kosten1993_isAbs =</span> <span class="fu">detect_subpattern</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            usePatternUDS,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">subpattern =</span> <span class="st">&quot;---&quot;</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, kosten1993_isAbs) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, kosten1993_isAbs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       kosten1993_isAbs
+##    &lt;dbl&gt; &lt;chr&gt;                               &lt;lgl&gt;           
+##  1     1 ooooooooooooooo                     FALSE           
+##  2     4 -------------------o-o-o            TRUE            
+##  3    13 ------------o-oooooooooo            TRUE            
+##  4    17 --++*++++++-++++++-+++-             FALSE           
+##  5   163 -o---o---o--o+----------            TRUE            
+##  6   210 -++++++++-+++-----------            TRUE            
+##  7   233 *+++++++++++o++++++++++o            FALSE           
+##  8   242 -----------------------             TRUE            
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o TRUE            
+## 10  2089 ++++---+--------------o-            TRUE</code></pre>
+</div>
+<div id="krupitsky_injectable_2011-a-and-b" class="section level2">
+<h2><span class="citation">Krupitsky et al. (2011)</span> (A) and
+(B)</h2>
+<p>There are two definitions from <a href="https://doi.org/DOI:10.1016/S0140-6736(11)60358-9">this paper</a>
+which we include in the reduction section our library: Confirmed opioid
+abstinence during weeks 5‐24 based on UOS and Weeks of confirmed opioid
+abstinence.</p>
+<div id="krupitsky-et-al.-2011-a" class="section level3">
+<h3>Krupitsky et al., 2011 (A)</h3>
+<p><strong>Definition</strong>: Confirmed opioid abstinence during weeks
+5‐24 based on UOS</p>
+<p>A comment on our algorithm: we do not know how long each protocol is
+exactly, so a pattern match approach (while intuitive at first) would
+not work. We will instead recode the use pattern as “negative” or
+“non-negative”, and then check that the proportion of non-negative UDS
+is 0%.</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">useProp =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;+&quot;</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> 5L,</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Set this to the length of your protocol, or 24, whichever is shorter</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> 15L,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>            <span class="at">proportion =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">krupitsky2011A_isAbs =</span> useProp <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, krupitsky2011A_isAbs) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, krupitsky2011A_isAbs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       krupitsky2011A_isAbs
+##    &lt;dbl&gt; &lt;chr&gt;                               &lt;lgl&gt;               
+##  1     1 ooooooooooooooo                     FALSE               
+##  2     4 -------------------o-o-o            TRUE                
+##  3    13 ------------o-oooooooooo            FALSE               
+##  4    17 --++*++++++-++++++-+++-             FALSE               
+##  5   163 -o---o---o--o+----------            FALSE               
+##  6   210 -++++++++-+++-----------            FALSE               
+##  7   233 *+++++++++++o++++++++++o            FALSE               
+##  8   242 -----------------------             TRUE                
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o FALSE               
+## 10  2089 ++++---+--------------o-            FALSE</code></pre>
+</div>
+<div id="krupitsky-et-al.-2011-b" class="section level3">
+<h3>Krupitsky et al., 2011 (B)</h3>
+<p><strong>Definition</strong>: Weeks of confirmed opioid abstinence</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">krupitsky2011B_abs =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> 5L,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># This trial protocol has a clear end date; we adjust it to our data</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> 15L</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, krupitsky2011B_abs) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, krupitsky2011B_abs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       krupitsky2011B_abs
+##    &lt;dbl&gt; &lt;chr&gt;                                            &lt;int&gt;
+##  1     1 ooooooooooooooo                                      0
+##  2     4 -------------------o-o-o                            11
+##  3    13 ------------o-oooooooooo                             9
+##  4    17 --++*++++++-++++++-+++-                              1
+##  5   163 -o---o---o--o+----------                             7
+##  6   210 -++++++++-+++-----------                             3
+##  7   233 *+++++++++++o++++++++++o                             0
+##  8   242 -----------------------                             11
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o                  6
+## 10  2089 ++++---+--------------o-                            10</code></pre>
+</div>
+</div>
+<div id="ling_buprenorphine_1998" class="section level2">
+<h2><span class="citation">Ling et al. (1998)</span></h2>
+<p><strong>Definition</strong>: % of participants who maintained 13
+consecutive negative UOS (1 month); urine was screened 3 times per
+week</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ling1998_isAbs =</span> <span class="fu">detect_subpattern</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 13 consecutive UDS at 3x per week is 4.3 weeks</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">subpattern =</span> <span class="st">&quot;----&quot;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, ling1998_isAbs) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, ling1998_isAbs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       ling1998_isAbs
+##    &lt;dbl&gt; &lt;chr&gt;                               &lt;lgl&gt;         
+##  1     1 ooooooooooooooo                     FALSE         
+##  2     4 -------------------o-o-o            TRUE          
+##  3    13 ------------o-oooooooooo            TRUE          
+##  4    17 --++*++++++-++++++-+++-             FALSE         
+##  5   163 -o---o---o--o+----------            TRUE          
+##  6   210 -++++++++-+++-----------            TRUE          
+##  7   233 *+++++++++++o++++++++++o            FALSE         
+##  8   242 -----------------------             TRUE          
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o TRUE          
+## 10  2089 ++++---+--------------o-            TRUE</code></pre>
+</div>
+<div id="lofwall_weekly_2018" class="section level2">
+<h2><span class="citation">Lofwall et al. (2018)</span></h2>
+<p><strong>Definition</strong>: No evidence of opioid use based on UOS
+(NOTE: minimal evidence of opioid use from UOS, not none)</p>
+<p><a href="https://doi.org/10.1001/jamainternmed.2018.1052">In their
+paper</a>, abstinence was defined as 2 of 3 negative UDS for weeks 9,
+10, and 11; negative UDS in week 12; and 5 or 6 UDS negative during
+weeks 13-24 (with alternating week visits, yielding 6 visits in this
+Phase II period). Because we have 15 weeks of data guaranteed, we scale
+this window and lattice. Their definition of abstinence is quite
+complex. Because we only have 15 weeks of data for most subjects, we
+shift their 12-week Phase I endpoint to week 7, and treat weeks 8-15 as
+Phase II. Also, we calculate these as proportions and not counts; this
+is so that these rules can be applied to windows of other sizes. The
+proportions would be the same—only the window of observation would
+change.</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">###  Define 15-week Lattice  </span><span class="al">###</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lofwallLattice_char <span class="ot">&lt;-</span> <span class="fu">collapse_lattice</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lattice_patterns =</span> <span class="fu">c</span>(<span class="st">&quot;o&quot;</span>, <span class="st">&quot;_o&quot;</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For the lattice as defined over 24 weeks, you need 12 weeks of weekly visits</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   and 6 sets of alternating &quot;no visit&quot; and &quot;visit&quot; week pairs, or c(12, 6).</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   For us, we want 7 weeks straight of weekly visits followed by 4 pairs of</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   alternating visits (8 weeks) for a total of 15 weeks.</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">4</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>lofwallLattice_char</span></code></pre></div>
+</details>
+<pre><code>## [1] &quot;ooooooo_o_o_o_o&quot;</code></pre>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">###  Calculate Weighted Abstinence  </span><span class="al">###</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Change mixed and missing results to positive</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(udsPattern)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># &quot;observe&quot; only the UDS that would have been caught by the protocol</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsLattice =</span> <span class="fu">view_by_lattice</span>(</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">lattice_pattern =</span> <span class="fu">str_sub</span>(lofwallLattice_char, <span class="at">end =</span> <span class="dv">15</span>) <span class="co"># first 15 weeks</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Impute the visits that were not &quot;observed&quot;</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsLatticeLOCF =</span> <span class="fu">impute_missing_visits</span>(</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsLattice,</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">method =</span> <span class="st">&quot;locf&quot;</span>,</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">quietly =</span> <span class="cn">TRUE</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Count for Weeks 5-7; Week 8; and Weeks 9-15</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">prop57 =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>            udsLatticeLOCF,</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> 5L,</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> 7L,</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>            <span class="at">proportion =</span> <span class="cn">TRUE</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">clean8 =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>            udsLatticeLOCF,</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> 8L,</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> 8L</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">prop915 =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>            udsLatticeLOCF,</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> 9L,</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> 15L,</span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>            <span class="at">proportion =</span> <span class="cn">TRUE</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check interval counts/proportions</span></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>        <span class="at">lofwall2018_isAbs =</span> (prop57 <span class="sc">&gt;=</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">&amp;</span> (clean8 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">&amp;</span> (prop915 <span class="sc">&gt;=</span> <span class="dv">5</span><span class="sc">/</span><span class="dv">6</span>)</span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, lofwall2018_isAbs) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, lofwall2018_isAbs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       lofwall2018_isAbs
+##    &lt;dbl&gt; &lt;chr&gt;                               &lt;lgl&gt;            
+##  1     1 ooooooooooooooo                     FALSE            
+##  2     4 -------------------o-o-o            TRUE             
+##  3    13 ------------o-oooooooooo            FALSE            
+##  4    17 --++*++++++-++++++-+++-             FALSE            
+##  5   163 -o---o---o--o+----------            FALSE            
+##  6   210 -++++++++-+++-----------            FALSE            
+##  7   233 *+++++++++++o++++++++++o            FALSE            
+##  8   242 -----------------------             TRUE             
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o FALSE            
+## 10  2089 ++++---+--------------o-            TRUE</code></pre>
+</div>
+<div id="mokri_medical_2016" class="section level2">
+<h2><span class="citation">Mokri et al. (2016)</span></h2>
+<p><strong>Definition</strong>: Days to 1st positive UOS; missing is
+positive</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Find the number of weeks until the first &quot;+&quot;</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">mokri2016_abs =</span> <span class="fu">detect_in_window</span>(</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">window_width =</span> 1L,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">threshold =</span> 1L</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="st">&quot;mokri2016_abs&quot;</span>, <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, <span class="fu">starts_with</span>(<span class="st">&quot;mokri2016_abs&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, <span class="fu">starts_with</span>(<span class="st">&quot;mokri2016_abs&quot;</span>))</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 4
+##      who usePatternUDS                       mokri2016_abs_time mokri2016_abs_…¹
+##    &lt;dbl&gt; &lt;chr&gt;                                            &lt;int&gt;            &lt;int&gt;
+##  1     1 ooooooooooooooo                                      1                1
+##  2     4 -------------------o-o-o                            20                1
+##  3    13 ------------o-oooooooooo                            13                1
+##  4    17 --++*++++++-++++++-+++-                              3                1
+##  5   163 -o---o---o--o+----------                             2                1
+##  6   210 -++++++++-+++-----------                             2                1
+##  7   233 *+++++++++++o++++++++++o                             1                1
+##  8   242 -----------------------                             23                0
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o                  1                1
+## 10  2089 ++++---+--------------o-                             1                1
+## # … with abbreviated variable name ¹​mokri2016_abs_event</code></pre>
+<p>If you are more comfortable using “survival” or “time-to-event” data
+structures, then the above definition can be modified by the following
+code:</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mokri2016_wksAbst =</span> survival<span class="sc">::</span><span class="fu">Surv</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> mokri2016_abs_time,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">event =</span> mokri2016_abs_event</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># FOR PRINTING THE TABLE ONLY. DO NOT USE NEXT LINE IN PRACTICE!!!</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mokri2016_wksAbst =</span> <span class="fu">as.character</span>(mokri2016_wksAbst)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, mokri2016_wksAbst)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       mokri2016_wksAbst
+##    &lt;dbl&gt; &lt;chr&gt;                               &lt;chr&gt;            
+##  1     1 ooooooooooooooo                     &quot; 1&quot;             
+##  2     4 -------------------o-o-o            &quot;20&quot;             
+##  3    13 ------------o-oooooooooo            &quot;13&quot;             
+##  4    17 --++*++++++-++++++-+++-             &quot; 3&quot;             
+##  5   163 -o---o---o--o+----------            &quot; 2&quot;             
+##  6   210 -++++++++-+++-----------            &quot; 2&quot;             
+##  7   233 *+++++++++++o++++++++++o            &quot; 1&quot;             
+##  8   242 -----------------------             &quot;23+&quot;            
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o &quot; 1&quot;             
+## 10  2089 ++++---+--------------o-            &quot; 1&quot;</code></pre>
+</div>
+<div id="schottenfeld_methadone_2005" class="section level2">
+<h2><span class="citation">Richard S. Schottenfeld et al.
+(2005)</span></h2>
+<p><strong>Definition</strong>: Max. number of consecutive weeks of
+negative UOS, missing is ignored</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ignore missing visits</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_becomes =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Mixed are positive</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Measure the length of the longest period of continuous abstinence</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">schottenfeld2005_abs =</span> <span class="fu">measure_abstinence_period</span>(</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern_binary =</span> udsPattern</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, schottenfeld2005_abs) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, schottenfeld2005_abs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       schottenfeld2005_abs
+##    &lt;dbl&gt; &lt;chr&gt;                                              &lt;int&gt;
+##  1     1 ooooooooooooooo                                        0
+##  2     4 -------------------o-o-o                              21
+##  3    13 ------------o-oooooooooo                              13
+##  4    17 --++*++++++-++++++-+++-                                2
+##  5   163 -o---o---o--o+----------                              10
+##  6   210 -++++++++-+++-----------                              11
+##  7   233 *+++++++++++o++++++++++o                               0
+##  8   242 -----------------------                               23
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o                   14
+## 10  2089 ++++---+--------------o-                              15</code></pre>
+</div>
+<div id="schottenfeld_maintenance_2008-a-and-b" class="section level2">
+<h2><span class="citation">Richard S. Schottenfeld, Chawarski, and
+Mazlan (2008)</span> (A) and (B)</h2>
+<p>There are two definitions from <a href="https://doi.org/10.1016/S0140-6736(08)60954-X">this paper</a>
+which we include in the reduction section our library: Longest period of
+negative UOS and Days to 1st positive UOS after randomization.</p>
+<div id="schottenfeld-chawarski-mazlan-2008-a" class="section level3">
+<h3>Schottenfeld, Chawarski, &amp; Mazlan, 2008 (A)</h3>
+<p><strong>Definition</strong>: Days to 1st positive UOS after
+randomization, missing is positive</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">schottenfeld2008A_abs =</span> <span class="fu">detect_in_window</span>(</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">window_width =</span> 1L,</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">threshold =</span> 1L</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="st">&quot;schottenfeld2008A_abs&quot;</span>, <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, <span class="fu">starts_with</span>(<span class="st">&quot;schottenfeld2008A_abs&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, <span class="fu">starts_with</span>(<span class="st">&quot;schottenfeld2008A_abs&quot;</span>))</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 4
+##      who usePatternUDS                       schottenfeld2008A_abs_time schott…¹
+##    &lt;dbl&gt; &lt;chr&gt;                                                    &lt;int&gt;    &lt;int&gt;
+##  1     1 ooooooooooooooo                                              1        1
+##  2     4 -------------------o-o-o                                    20        1
+##  3    13 ------------o-oooooooooo                                    13        1
+##  4    17 --++*++++++-++++++-+++-                                      3        1
+##  5   163 -o---o---o--o+----------                                     2        1
+##  6   210 -++++++++-+++-----------                                     2        1
+##  7   233 *+++++++++++o++++++++++o                                     1        1
+##  8   242 -----------------------                                     23        0
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o                          1        1
+## 10  2089 ++++---+--------------o-                                     1        1
+## # … with abbreviated variable name ¹​schottenfeld2008A_abs_event</code></pre>
+</div>
+<div id="schottenfeld-et-al.-2008-b" class="section level3">
+<h3>Schottenfeld et al., 2008 (B)</h3>
+<p><strong>Definition</strong>: Longest period of negative UOS, missing
+is positive</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">schottenfeld2008B_abs =</span> <span class="fu">measure_abstinence_period</span>(</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern_binary =</span> udsPattern</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, schottenfeld2008B_abs) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, schottenfeld2008B_abs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       schottenfeld2008B_abs
+##    &lt;dbl&gt; &lt;chr&gt;                                               &lt;int&gt;
+##  1     1 ooooooooooooooo                                         0
+##  2     4 -------------------o-o-o                               19
+##  3    13 ------------o-oooooooooo                               12
+##  4    17 --++*++++++-++++++-+++-                                 2
+##  5   163 -o---o---o--o+----------                               10
+##  6   210 -++++++++-+++-----------                               11
+##  7   233 *+++++++++++o++++++++++o                                0
+##  8   242 -----------------------                                23
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o                    10
+## 10  2089 ++++---+--------------o-                               14</code></pre>
+</div>
+</div>
+<div id="shufman_efficacy_1994" class="section level2">
+<h2><span class="citation">Shufman et al. (1994)</span></h2>
+<p><strong>Definition</strong>: Weeks between 1st day of NTX
+administration and 1st positive UOS, missing is ignored (but treated as
+negative in order to count the weeks properly)</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set &quot;o&quot; to &quot;-&quot;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_becomes =</span> <span class="st">&quot;-&quot;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set &quot;*&quot; to &quot;+&quot;</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">shufman1994_absN =</span> <span class="fu">detect_in_window</span>(</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">window_width =</span> 1L,</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>            <span class="at">threshold =</span> 1L</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="st">&quot;shufman1994_absN&quot;</span>, <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, <span class="fu">starts_with</span>(<span class="st">&quot;shufman1994_absN&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, <span class="fu">starts_with</span>(<span class="st">&quot;shufman1994_absN&quot;</span>))</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 4
+##      who usePatternUDS                       shufman1994_absN_time shufman1994…¹
+##    &lt;dbl&gt; &lt;chr&gt;                                               &lt;int&gt;         &lt;int&gt;
+##  1     1 ooooooooooooooo                                        15             0
+##  2     4 -------------------o-o-o                               24             0
+##  3    13 ------------o-oooooooooo                               24             0
+##  4    17 --++*++++++-++++++-+++-                                 3             1
+##  5   163 -o---o---o--o+----------                               14             1
+##  6   210 -++++++++-+++-----------                                2             1
+##  7   233 *+++++++++++o++++++++++o                                1             1
+##  8   242 -----------------------                                23             0
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o                     1             1
+## 10  2089 ++++---+--------------o-                                1             1
+## # … with abbreviated variable name ¹​shufman1994_absN_event</code></pre>
+</div>
+<div id="weiss_adjunctive_2011-ctn-0030" class="section level2">
+<h2><span class="citation">Weiss et al. (2011, CTN–0030)</span></h2>
+<p><strong>Definition</strong>: Negative UOS during the last week AND
+for at least 2 of the previous 3 weeks of the third month of BUP/NX
+treatment, missing is positive.</p>
+<p>Note: this definition is looking for one of the following four
+abstinence patterns in last 4 weeks: <code>&quot;----&quot;</code>,
+<code>&quot;+---&quot;</code>, <code>&quot;-+--&quot;</code>, or <code>&quot;--+-&quot;</code>. This
+definition is just an insanely strict measure of study retention. The
+first part of the definition (“negative in the last week”) already fails
+anyone who didn’t stay in the study for the entire protocol period
+(because their last week UDS will automatically be
+<code>&quot;o&quot;</code>).</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="ot">&lt;-</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    outcomesAbs_df <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> usePatternUDS,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">udsPattern =</span> <span class="fu">recode_missing_visits</span>(</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing_is =</span> <span class="st">&quot;*&quot;</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">cleanLastWeek =</span> <span class="fu">detect_subpattern</span>(</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">subpattern =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> <span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">finalUseCount =</span> <span class="fu">count_matches</span>(</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">use_pattern =</span> udsPattern,</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">match_is =</span> <span class="st">&quot;+&quot;</span>,</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 3 weeks leading up to the last week</span></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> <span class="sc">-</span>4L,</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> <span class="sc">-</span>2L</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">weissLingCTN0030_isAbs =</span> cleanLastWeek <span class="sc">&amp;</span> (finalUseCount <span class="sc">&lt;=</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(who, weissLingCTN0030_isAbs) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(outcomesAbs_df, ., <span class="at">by =</span> <span class="st">&quot;who&quot;</span>)</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>outcomesAbs_df <span class="sc">%&gt;%</span> </span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(who <span class="sc">%in%</span> examplePeople_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(who, usePatternUDS, weissLingCTN0030_isAbs)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 10 × 3
+##      who usePatternUDS                       weissLingCTN0030_isAbs
+##    &lt;dbl&gt; &lt;chr&gt;                               &lt;lgl&gt;                 
+##  1     1 ooooooooooooooo                     FALSE                 
+##  2     4 -------------------o-o-o            FALSE                 
+##  3    13 ------------o-oooooooooo            FALSE                 
+##  4    17 --++*++++++-++++++-+++-             FALSE                 
+##  5   163 -o---o---o--o+----------            TRUE                  
+##  6   210 -++++++++-+++-----------            TRUE                  
+##  7   233 *+++++++++++o++++++++++o            FALSE                 
+##  8   242 -----------------------             TRUE                  
+##  9  1103 ++--oo--o-+-+--o----------o-o-oo++o FALSE                 
+## 10  2089 ++++---+--------------o-            TRUE</code></pre>
+<hr />
+<p></br></p>
+</div>
+</div>
+<div id="computing-environment" class="section level1">
+<h1>Computing Environment</h1>
+<p>Here is the information concerning the system configuration,
+packages, and their versions used in this computation:</p>
+<details class="chunk-details"><summary class="chunk-summary"><span class="chunk-summary-text">Code</span></summary>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+</details>
+<pre><code>## R version 4.2.0 (2022-04-22)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Big Sur/Monterey 10.16
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] C/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] forcats_0.5.1    stringr_1.4.0    dplyr_1.0.9      purrr_0.3.4     
+##  [5] readr_2.1.2      tidyr_1.2.0      tibble_3.1.8     ggplot2_3.3.6   
+##  [9] tidyverse_1.3.2  kableExtra_1.3.4 readxl_1.4.0     CTNote_0.1.0    
+## 
+## loaded via a namespace (and not attached):
+##  [1] lattice_0.20-45     svglite_2.1.0       lubridate_1.8.0    
+##  [4] assertthat_0.2.1    digest_0.6.29       utf8_1.2.2         
+##  [7] R6_2.5.1            cellranger_1.1.0    backports_1.4.1    
+## [10] reprex_2.0.1        evaluate_0.16       highr_0.9          
+## [13] httr_1.4.3          pillar_1.8.0        rlang_1.0.4        
+## [16] googlesheets4_1.0.0 rstudioapi_0.13     jquerylib_0.1.4    
+## [19] Matrix_1.4-1        rmarkdown_2.14      splines_4.2.0      
+## [22] webshot_0.5.3       googledrive_2.0.0   munsell_0.5.0      
+## [25] broom_1.0.0         compiler_4.2.0      modelr_0.1.8       
+## [28] xfun_0.32           pkgconfig_2.0.3     systemfonts_1.0.4  
+## [31] htmltools_0.5.3     tidyselect_1.1.2    fansi_1.0.3        
+## [34] viridisLite_0.4.0   crayon_1.5.1        withr_2.5.0        
+## [37] tzdb_0.3.0          dbplyr_2.2.1        grid_4.2.0         
+## [40] jsonlite_1.8.0      gtable_0.3.0        lifecycle_1.0.1    
+## [43] DBI_1.1.3           magrittr_2.0.3      scales_1.2.0       
+## [46] cli_3.3.0           stringi_1.7.8       cachem_1.0.6       
+## [49] fs_1.5.2            xml2_1.3.3          bslib_0.4.0        
+## [52] ellipsis_0.3.2      generics_0.1.3      vctrs_0.4.1        
+## [55] tools_4.2.0         glue_1.6.2          hms_1.1.1          
+## [58] survival_3.3-1      fastmap_1.1.0       yaml_2.3.5         
+## [61] colorspace_2.0-3    gargle_1.2.0        rvest_1.0.2        
+## [64] knitr_1.39          haven_2.5.0         sass_0.4.2</code></pre>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-fiellin_counseling_2006" class="csl-entry">
+Fiellin, David A., Michael V. Pantalon, Marek C. Chawarski, Brent A.
+Moore, Lynn E. Sullivan, Patrick G. O’Connor, and Richard S.
+Schottenfeld. 2006. <span>“Counseling Plus
+<span>Buprenorphine</span>–<span>Naloxone</span>
+<span>Maintenance</span> <span>Therapy</span> for <span>Opioid</span>
+<span>Dependence</span>.”</span> <em>New England Journal of
+Medicine</em> 355 (4): 365–74. <a href="https://doi.org/10.1056/NEJMoa055255">https://doi.org/10.1056/NEJMoa055255</a>.
+</div>
+<div id="ref-kosten_buprenorphine_1993" class="csl-entry">
+Kosten, Thomas R., Richard Schottenfeld, Douglas Ziedonis, and Jean
+Falcioni. 1993. <span>“Buprenorphine Versus <span>Methadone</span>
+<span>Maintenance</span> for <span>Opioid</span>
+<span>Dependence</span>.”</span> <em>The Journal of Nervous and Mental
+Disease</em> 181 (6): 358–64. <a href="https://doi.org/10.1097/00005053-199306000-00004">https://doi.org/10.1097/00005053-199306000-00004</a>.
+</div>
+<div id="ref-krupitsky_injectable_2011" class="csl-entry">
+Krupitsky, Evgeny, Edward V Nunes, Walter Ling, Ari Illeperuma, David R
+Gastfriend, and Bernard L Silverman. 2011. <span>“Injectable
+Extended-Release Naltrexone for Opioid Dependence: A Double-Blind,
+Placebo-Controlled, Multicentre Randomised Trial.”</span> <em>The
+Lancet</em> 377 (9776): 1506–13. <a href="https://doi.org/10.1016/S0140-6736(11)60358-9">https://doi.org/10.1016/S0140-6736(11)60358-9</a>.
+</div>
+<div id="ref-ling_buprenorphine_1998" class="csl-entry">
+Ling, Walter, Charles Charuvastra, Joseph F. Collins, Steve Batki,
+Lawrence S. Brown Jr, Prudencia Kintaudi, Donald R. Wesson, et al. 1998.
+<span>“Buprenorphine Maintenance Treatment of Opiate Dependence: A
+Multicenter, Randomized Clinical Trial.”</span> <em>Addiction</em> 93
+(4): 475–86. <a href="https://doi.org/10.1046/j.1360-0443.1998.9344753.x">https://doi.org/10.1046/j.1360-0443.1998.9344753.x</a>.
+</div>
+<div id="ref-lofwall_weekly_2018" class="csl-entry">
+Lofwall, Michelle R., Sharon L. Walsh, Edward V. Nunes, Genie L. Bailey,
+Stacey C. Sigmon, Kyle M. Kampman, Michael Frost, et al. 2018.
+<span>“Weekly and <span>Monthly</span> <span>Subcutaneous</span>
+<span>Buprenorphine</span> <span>Depot</span> <span>Formulations</span>
+Vs <span>Daily</span> <span>Sublingual</span> <span>Buprenorphine</span>
+<span>With</span> <span>Naloxone</span> for <span>Treatment</span> of
+<span>Opioid</span> <span>Use</span> <span>Disorder</span>:
+<span>A</span> <span>Randomized</span> <span>Clinical</span>
+<span>Trial</span>.”</span> <em>Journal of the American Medical
+Association: Internal Medicine</em> 178 (6): 764–73. <a href="https://doi.org/10.1001/jamainternmed.2018.1052">https://doi.org/10.1001/jamainternmed.2018.1052</a>.
+</div>
+<div id="ref-mokri_medical_2016" class="csl-entry">
+Mokri, Azarakhsh, Marek C. Chawarski, Hamidreza Taherinakhost, and
+Richard S. Schottenfeld. 2016. <span>“Medical Treatments for Opioid Use
+Disorder in <span>Iran</span>: A Randomized, Double-Blind
+Placebo-Controlled Comparison of Buprenorphine/Naloxone and Naltrexone
+Maintenance Treatment.”</span> <em>Addiction</em> 111 (5): 874–82. <a href="https://doi.org/10.1111/add.13259">https://doi.org/10.1111/add.13259</a>.
+</div>
+<div id="ref-schottenfeld_methadone_2005" class="csl-entry">
+Schottenfeld, Richard S., Marek C. Chawarski, Juliana R. Pakes, Michael
+V. Pantalon, Kathleen M. Carroll, and Thomas R. Kosten. 2005.
+<span>“Methadone <span>Versus</span> <span>Buprenorphine</span>
+<span>With</span> <span>Contingency</span> <span>Management</span> or
+<span>Performance</span> <span>Feedback</span> for <span>Cocaine</span>
+and <span>Opioid</span> <span>Dependence</span>.”</span> <em>American
+Journal of Psychiatry</em> 162 (2): 340–49. <a href="https://doi.org/10.1176/appi.ajp.162.2.340">https://doi.org/10.1176/appi.ajp.162.2.340</a>.
+</div>
+<div id="ref-schottenfeld_maintenance_2008" class="csl-entry">
+Schottenfeld, Richard S, Marek C Chawarski, and Mahmud Mazlan. 2008.
+<span>“Maintenance Treatment with Buprenorphine and Naltrexone for
+Heroin Dependence in <span>Malaysia</span>: A Randomised, Double-Blind,
+Placebo-Controlled Trial.”</span> <em>The Lancet</em> 371 (9631):
+2192–2200. <a href="https://doi.org/10.1016/S0140-6736(08)60954-X">https://doi.org/10.1016/S0140-6736(08)60954-X</a>.
+</div>
+<div id="ref-shufman_efficacy_1994" class="csl-entry">
+Shufman, Emi N., Shai Porat, Eliezer Witztum, Dan Gandacu, Rachel
+Bar-Hamburger, and Yigal Ginath. 1994. <span>“The Efficacy of Naltrexone
+in Preventing Reabuse of Heroin After Detoxification.”</span>
+<em>Biological Psychiatry</em> 35 (12): 935–45. <a href="https://doi.org/10.1016/0006-3223(94)91240-8">https://doi.org/10.1016/0006-3223(94)91240-8</a>.
+</div>
+<div id="ref-weiss_adjunctive_2011" class="csl-entry">
+Weiss, Roger D., Jennifer Sharpe Potter, David A. Fiellin, Marilyn
+Byrne, Hilary S. Connery, William Dickinson, John Gardin, et al. 2011.
+<span>“Adjunctive <span>Counseling</span> <span>During</span>
+<span>Brief</span> and <span>Extended</span>
+<span>Buprenorphine</span>-<span>Naloxone</span> <span>Treatment</span>
+for <span>Prescription</span> <span>Opioid</span>
+<span>Dependence</span>: <span>A</span> 2-<span>Phase</span>
+<span>Randomized</span> <span>Controlled</span>
+<span>Trial</span>.”</span> <em>Archives of General Psychiatry</em> 68
+(12): 1238–46. <a href="https://doi.org/10.1001/archgenpsychiatry.2011.121">https://doi.org/10.1001/archgenpsychiatry.2011.121</a>.
+</div>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
